@@ -40,7 +40,7 @@ def result_get_redirect():
 
 @app.route("/results", methods=['POST'])
 def results():
-    data = request.get_json()
+    data = request.get_json(silent=True)
     profile = None
     eduid_given = False
     if not data and isinstance(request.form.get('data'), six.string_types) or request.files:
